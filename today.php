@@ -11,7 +11,7 @@ if (!is_file('vendor/autoload.php')) {
 
 
 $ans = array();
-$day = date('j m Y'); //Кэш на один день
+$day = date('j m Y H'); //Кэш на один час
 $data = Cache::exec(array(), __FILE__, function () {
 	$src = "http://www.cbr.ru/scripts/XML_daily.asp";
 	$cbr = simplexml_load_file($src);
