@@ -1,0 +1,10 @@
+{
+	"name": "akiyatkin/cbr",
+	"description": "Курсы валют",
+	"license": "GPL3",
+	"require":{
+		"infrajs/ans":"~1",
+		"infrajs/cache":"~1",
+		"infrajs/router":"~1"
+	}
+}
