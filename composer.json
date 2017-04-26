@@ -4,7 +4,11 @@
 	"license": "GPL3",
 	"require":{
 		"infrajs/ans":"~1",
-		"infrajs/cache":"~1",
-		"infrajs/router":"~1"
+		"infrajs/cache":"~1"
+	},
+	"autoload":{
+		"psr-4":{
+			"akiyatkin\\cbr\\": ""
+		}
 	}
 }

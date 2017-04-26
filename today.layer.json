@@ -1,4 +1,4 @@
 {
-	"tpl":"-cbr/today.tpl",
-	"json":"-cbr/today.php"
+	"tpl":"-cbr/layout.tpl",
+	"json":"-cbr/"
 }

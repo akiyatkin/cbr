@@ -9,6 +9,15 @@
 	"akiyatkin/cbr":"~1"
 }
 ```
+## Использование в php
+
+```
+use akiyatkin\cbr\CBR;
+
+$data = CBR::get(); //Актуальны курсы валют на сегодня. С кэшем на 1 час.
+echo '<pre>';
+print_r($data);
+```
 
 ## Использование с [infrajs/controller](https://github.com/infrajs/controller)
 
