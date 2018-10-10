@@ -9,7 +9,8 @@ class CBR {
 	public static function get()
 	{
 		$data = MemCache::exec('Курсы валют', function () {
-			$src = "http://www.cbr.ru/scripts/XML_daily.asp";
+			//$src = "http://www.cbr.ru/scripts/XML_daily.asp";
+			$src = "https://www.cbr-xml-daily.ru/daily.xml";
 			$cbr = simplexml_load_file($src);
 			if (!$cbr) {
 				Nostore::on();
