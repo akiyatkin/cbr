@@ -2,13 +2,13 @@
 namespace akiyatkin\cbr;
 
 use infrajs\router\Router;
-use akiyatkin\boo\MemCache;
+use infrajs\cache\Cache;
 use infrajs\nostore\Nostore;
 
 class CBR {
 	public static function get()
 	{
-		$data = MemCache::exec('Курсы валют', function () {
+		$data = Cache::exec([(string) date('F.Y')], 'cbr', function () {
 			//$src = "http://www.cbr.ru/scripts/XML_daily.asp";
 			$src = "https://www.cbr-xml-daily.ru/daily.xml";
 			$cbr = simplexml_load_file($src);
@@ -16,7 +16,6 @@ class CBR {
 				Nostore::on();
 				return array();
 			}
-			
 			$attr = $cbr->attributes();
 			$t = strtotime($attr['Date'][0]);
 			$data = array();
@@ -32,7 +31,7 @@ class CBR {
 			}
 			
 			return $data;
-		}, array(), ['akiyatkin\boo\Cache','getDurationTime'], ['8:00']);
+		});
 		return $data;
 	}
 }
